@@ -1,0 +1,27 @@
+Description:
+We are making a simulation game. For the moment, we will make a market tycoon game cause that sounds fun. or like a company simulator where you have a good that you can make. You can make your own products and set a certain price as well as COGS to it. More products, more infrastructure to make the product and sell it and you can add different teams like marketing teams and manfacturing teams but they come with costs and you can even assign customization to personell and wages for employees while receiving a customer base and revenue to suplement your funds. You can even do different company types for starting out like starting out as a corporate entity or as a startup entreprenuer in a certain industry where the larger the industry the more competition but more potential for revenue. End game would be mataining the company and reward of milestones and you can set it where the end game could change if preferred like total war where you may win by hitting a certain dollar amount in market cap or by obtaining a certain market share with a particular product line or bla bla blah... Good start I think, but KISS for now.
+
+Needs:
+KISS
+- Overview page of everything
+- Buy ability
+- Sell ability
+- Improvement mechanic
+- End game (win, hit a threshold)
+- Game fail (run out of money)
+
+Core:
+- Buy and Sell
+- Game Win/Fail
+- Oveview
+
+Sub:
+- Improvement
+
+In Progress:
+- Make bigger product options w/increase money increment per loop and cost loop dependent of product type
+- Refactor the buy and sell into functions and products into classes (or functions to start?)
+
+Done:
+- Make a product menu of what you currently own and incremental purchase of products
+- Add lines in between menus
