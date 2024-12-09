@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		563FB0562D067C9C00277B71 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 563FB0552D067C9C00277B71 /* main.cpp */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		5636CAA12D03AD7700D43A73 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,17 +24,10 @@
 
 /* Begin PBXFileReference section */
 		5636CAA32D03AD7700D43A73 /* Daily */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Daily; sourceTree = BUILT_PRODUCTS_DIR; };
+		563FB0552D067C9C00277B71 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C5E6D4F72D043B0200D983E6 /* design.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = design.txt; sourceTree = "<group>"; };
 		C5E6D4F92D043B0200D983E6 /* main.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		5636CAA52D03AD7700D43A73 /* Daily */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Daily;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5636CAA02D03AD7700D43A73 /* Frameworks */ = {
@@ -48,7 +45,7 @@
 			children = (
 				C5E6D4F72D043B0200D983E6 /* design.txt */,
 				C5E6D4F92D043B0200D983E6 /* main.py */,
-				5636CAA52D03AD7700D43A73 /* Daily */,
+				563FB0552D067C9C00277B71 /* main.cpp */,
 				5636CAA42D03AD7700D43A73 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,9 +72,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				5636CAA52D03AD7700D43A73 /* Daily */,
 			);
 			name = Daily;
 			packageProductDependencies = (
@@ -124,6 +118,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				563FB0562D067C9C00277B71 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
