@@ -22,82 +22,102 @@
 #include <vector>
 
 // ========================================
+// Global
+// ========================================
+
+// Expression Simplification
+using std::cout;
+using std::cin;
+using std::string;
+using std::vector;
+
+// Global Variables
+int money_current = 100;
+int money_increment {};
+int option {};
+vector<string> products;
+
+// ========================================
+// Functions
+// ========================================
+
+void overview() {
+    cout << "------------------------" << "\n\n";
+    cout << "Current Money: $" << money_current << "\n";
+    
+    // Print each product in the vector
+    cout << "Products Owned: \n";
+    for (const auto& product : products) {
+        cout << "- " << product << "\n";
+    }
+    cout << "\n";
+    
+    cout << "------------------------" << "\n\n";
+    cout << "What do you want to do?" << "\n";
+    cout << "Enter '1' to Buy" << "\n" << "Enter '2' to Sell" << "\n" << "Enter '3' to Exit " << "\n\n" << "Option: ";
+    
+    // Overview Menu Selection Variable Declaration
+    cin >> option;
+}
+
+void buy() {
+    // Buy Overview Menu
+    cout << "\n" << "------------------------" << "\n";
+    cout << "\n" << "What would you like to buy?" << "\n\n";
+    cout << "Enter 'P' for Product" << "\n";
+    cout << "Enter 'B' for Building" << "\n";
+    cout << "\n" << "Selection: ";
+    
+    // Buy Selection Variable Declaration
+    string option_buy;
+    cin >> option_buy;
+    
+    if (option_buy == "P") { // Product Option
+        //
+        cout << "\n" << "------------------------" << "\n";
+
+        // Product Cost Logic
+        int product_cost_small = 10;
+        cout << "Cost of New Product: $" << product_cost_small << "\n";
+        
+        // Product Details
+        string product_1;
+        cout << "\n" << "Enter Name of Product: ";
+        cin >> product_1;
+        cout << product_1 << " bought successfully.";
+        
+        // Product Purchase Logic
+        money_current -= product_cost_small;
+        cout << "\n" << "Current Money: $" << money_current << "\n\n";
+        money_increment += 5; // Product revenue incremeter based on type of product bought
+        products.push_back(product_1); // Add product purchased to all products owned by user
+        
+    }
+}
+
+void sell() {
+    cout << "sell\n\n";
+}
+
+// ========================================
 // Main Program
 // ========================================
 
 int main () {
-    // Expression Simplification
-    using std::cout;
-    using std::cin;
-    using std::string;
-    using std::vector;
-    
-    // Global Variables
-    int money_current = 100;
-    int money_increment {};
-    int option {};
-    vector<string> products;
-    
     // Intro Tagline
     cout << "================================" << "\n";
     cout << "===== Welcome to Capitalis =====" << "\n";
     cout << "================================" << "\n\n";
     
-    // Overview Menu
     while (true) {
-        cout << "------------------------" << "\n\n";
-        cout << "Current Money: $" << money_current << "\n";
-        
-        // Print each product in the vector
-        cout << "Products Owned: \n";
-        for (const auto& product : products) {
-            cout << "- " << product << "\n";
-        }
-        cout << "\n";
-        
-        cout << "------------------------" << "\n\n";
-        cout << "What do you want to do?" << "\n";
-        cout << "Enter '1' to Buy" << "\n" << "Enter '2' to Sell" << "\n" << "Enter '3' to Exit " << "\n\n" << "Option: ";
-        
-        // Overview Menu Selection Variable Declaration
-        cin >> option;
+        // Overview Menu
+        overview();
         
         if (option == 1) { // Buy Option
-            // Buy Overview Menu
-            cout << "\n" << "------------------------" << "\n";
-            cout << "\n" << "What would you like to buy?" << "\n\n";
-            cout << "Enter 'P' for Product" << "\n";
-            cout << "Enter 'B' for Building" << "\n";
-            cout << "\n" << "Selection: ";
-            
-            // Buy Selection Variable Declaration
-            string option_buy;
-            cin >> option_buy;
-            
-            if (option_buy == "P") { // Product Option
-                //
-                cout << "\n" << "------------------------" << "\n";
-
-                // Product Cost Logic
-                int product_cost_small = 10;
-                cout << "Cost of New Product: $" << product_cost_small << "\n";
-                
-                // Product Details
-                string product_1;
-                cout << "\n" << "Enter Name of Product: ";
-                cin >> product_1;
-                cout << product_1 << " bought successfully.";
-                
-                // Product Purchase Logic
-                money_current -= product_cost_small;
-                cout << "\n" << "Current Money: $" << money_current << "\n\n";
-                money_increment += 5; // Product revenue incremeter based on type of product bought
-                products.push_back(product_1); // Add product purchased to all products owned by user
-                
-            }
+            buy();
             
         } else if (option == 2) { // Sell Option
-            cout << "sell\n\n";
+            sell();
             
         } else if (option == 3) {
             // Ends Program
