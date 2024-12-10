@@ -19,7 +19,6 @@ Sub:
     - Improvement
 
 In Progress:
-    - Need a end game......and a turn counter
     - Able to clear the output of the command line history?
     - Expand buy items for buildings which is a multipler depending on type of building (option for manufacturing making cost cheaper for each new product, marketing for multiplicity of each product, administration building to expand limit of amount of buildings able to be purchased, sales building to adjust amount of revenue of each product). Each building has a size option that bigger the size, more expensive it is but more value from it. Each building has a certain amount of employees with salaries of each person and
     - Baseline of employee creation of certain stats (morale impacting amount of operational efficiency, skill being a output multiplier but has increased cost overall for the employee, ...)
@@ -31,4 +30,5 @@ Done:
     - Make a product menu of what you currently own and incremental purchase of products
     - Add lines in between menus
     - Refactor the buy and sell into functions and products into classes (or functions to start?)
+    - Need a end game......and a turn counter
 

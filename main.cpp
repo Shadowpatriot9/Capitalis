@@ -32,11 +32,17 @@ using std::string;
 using std::vector;
 
 // Global Variables
-int money_current = 100;
+int money_current = 10;
 int money_increment {};
 int option {};
 int turn_counter {1};
 vector<string> products;
+
+// ========================================
+// Classes
+// ========================================
+
+
 
 // ========================================
 // Functions
@@ -79,6 +85,7 @@ void buy() {
         cout << "\n" << "------------------------" << "\n";
 
         // Product Cost Logic
+        int product_revenue_1 = 3;
         int product_cost_small = 10;
         cout << "Cost of New Product: $" << product_cost_small << "\n";
         
@@ -91,7 +98,7 @@ void buy() {
         // Product Purchase Logic
         money_current -= product_cost_small;
         cout << "\n" << "Current Money: $" << money_current << "\n\n";
-        money_increment += 5; // Product revenue incremeter based on type of product bought
+        money_increment += product_revenue_1; // Product revenue incremeter based on type of product bought
         products.push_back(product_1); // Add product purchased to all products owned by user
         
     }
@@ -115,23 +122,27 @@ int main () {
         // Overview Menu
         overview();
         
-        if (option == 1) { // Buy Option
-            buy();
-            
-        } else if (option == 2) { // Sell Option
-            sell();
-            
-        } else if (option == 3) {
-            // Ends Program
+        // Option Selector
+        if (option == 1) buy(); // Buy Option
+        else if (option == 2) sell(); // Sell Option
+        else if (option == 3) break; // Exit Game
+        else cout << "not valid"; // No Option
+        
+        // Game End Checker (win)
+
+        
+        // Game End Checker (lose)
+        if (money_current <= 0)  {
+            cout << "**************************" << "\n";
+            cout << "You have run out of money." << "\n" << "Game Over." << "\n";
+            cout << "**************************" << "\n\n";
             break;
-            
-        } else { // No Option
-            cout << "not valid";
-            
         }
+        
         // End of Turn Actions
         money_current += money_increment;
         turn_counter ++;
+        
     }
     return 0;
 
