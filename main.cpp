@@ -35,6 +35,7 @@ using std::vector;
 int money_current = 100;
 int money_increment {};
 int option {};
+int turn_counter {1};
 vector<string> products;
 
 // ========================================
@@ -43,6 +44,7 @@ vector<string> products;
 
 void overview() {
     cout << "------------------------" << "\n\n";
+    cout << "Turn Number: " << turn_counter << "\n";
     cout << "Current Money: $" << money_current << "\n";
     
     // Print each product in the vector
@@ -129,7 +131,7 @@ int main () {
         }
         // End of Turn Actions
         money_current += money_increment;
-        
+        turn_counter ++;
     }
     return 0;
 
