@@ -32,8 +32,9 @@ using std::string;
 using std::vector;
 
 // Global Variables
-int money_current = 10;
+int money_current = 100;
 int money_increment {};
+int money_game_win = 1000;
 int option {};
 int turn_counter {1};
 vector<string> products;
@@ -85,7 +86,7 @@ void buy() {
         cout << "\n" << "------------------------" << "\n";
 
         // Product Cost Logic
-        int product_revenue_1 = 3;
+        int product_revenue_1 = 20;
         int product_cost_small = 10;
         cout << "Cost of New Product: $" << product_cost_small << "\n";
         
@@ -129,7 +130,23 @@ int main () {
         else cout << "not valid"; // No Option
         
         // Game End Checker (win)
-
+        if (money_current >= money_game_win) {
+            cout << "**************************" << "\n";
+            cout << "Congratulations!" << "\n" << "You have past $" << money_game_win << " and have won the game by reaching: $" << money_current << "!" << "\n";
+            cout << "**************************" << "\n";
+            cout << "\n" << "Would you like to continue? (Y/N): ";
+            
+            // Continue Game Option (optional)
+            string game_end_selector {};
+            cin >> game_end_selector;
+            if (game_end_selector == "Y") {
+                cout << "\n";
+                continue;
+            } else if (game_end_selector == "N") {
+                cout << "Ending Game..." << "\n\n";
+                break;
+            }
+        }
         
         // Game End Checker (lose)
         if (money_current <= 0)  {
