@@ -2,16 +2,19 @@
 // Introduction
 // =======================================
 
-// Author: Grayden Scovil
-// Date of Origin: 12/06/2024
-// Brief: This is to be used as a daily item where a block of code is completed incremently with a minimum requirement of one line of code not including an adjustment to a single line of code.
-//
-// Requirements:
-// - The daily adjustment must be at minimum of a single line of code in any language but has no maximum value.
-// - It must not integere with the program in a way that makes the code not function as intended (aka, dont break it otherwise you will loose encouragement).
-// - There is no time requirement.
-// - Thats all I got for the moment.
-// - There will be no carry over. If a day is missed, the day following will have the same minimum of a single line of code is not to be compounded.
+/*
+ Brief: This is to be used as a daily item where a block of code is completed incremently with a minimum requirement of one line of code not including an adjustment to a single line of code.
+ Author: Grayden Scovil
+ Date of Origin: 12/06/2024
+
+
+ Requirements:
+ - The daily adjustment must be at minimum of a single line of code in any language but has no maximum value.
+ - It must not integere with the program in a way that makes the code not function as intended (aka, dont break it otherwise you will loose encouragement).
+ - There is no time requirement.
+ - Thats all I got for the moment.
+ - There will be no carry over. If a day is missed, the day following will have the same minimum of a single line of code is not to be compounded.
+ */
 
 // ========================================
 // Dependencies
@@ -21,20 +24,17 @@
 #include <string>
 #include <vector>
 
+// Expression Simplification
+using namespace std;
+
 // ========================================
 // Global
 // ========================================
 
-// Expression Simplification
-using std::cout;
-using std::cin;
-using std::string;
-using std::vector;
-
 // Global Variables
 int money_current = 100;
 int money_increment {};
-int money_game_win = 1000;
+const int money_game_win = 1000;
 int option {};
 int turn_counter {1};
 vector<string> products;
@@ -43,7 +43,45 @@ vector<string> products;
 // Classes
 // ========================================
 
+// Product Object
+class product {
+    private:
+        string name;
+        int cost;
+        int revenue;
 
+    public:
+        // Constructor
+        product(string product_name, int product_cost, int product_revenue) {
+            name = product_name;
+            cost = product_cost;
+            revenue = product_revenue;
+        }
+
+        // Getter for Name
+        string get_name() const {
+            return name;
+        }
+        // Getter for Cost
+        int get_cost() const {
+            return cost;
+        }
+        
+        // Getter for Revenue
+        int get_revenue() const {
+            return revenue;
+        }
+    
+        // Display
+        void display() const {
+            cout << "Product: " << name << "\n" << "Cost: " << cost << "\n";
+        }
+};
+
+// Building Object
+class building {
+    
+};
 
 // ========================================
 // Functions
@@ -53,6 +91,8 @@ void overview() {
     cout << "------------------------" << "\n\n";
     cout << "Turn Number: " << turn_counter << "\n";
     cout << "Current Money: $" << money_current << "\n";
+    cout << "Revenue per turn: $" << money_increment << "\n";
+    cout << "Expenses per turn: $" << "***" << "\n";
     
     // Print each product in the vector
     cout << "Products Owned: \n";
@@ -82,25 +122,35 @@ void buy() {
     cin >> option_buy;
     
     if (option_buy == "P") { // Product Option
-        //
         cout << "\n" << "------------------------" << "\n";
 
-        // Product Cost Logic
-        int product_revenue_1 = 20;
-        int product_cost_small = 10;
-        cout << "Cost of New Product: $" << product_cost_small << "\n";
-        
-        // Product Details
-        string product_1;
+        // Product Variables
+        string name;
+        int revenue = 5;
+        int cost = 10;
+        vector<product> products;
+       
+        // Product Input
+        cout << "Cost of New Product: $" << cost << "\n";
         cout << "\n" << "Enter Name of Product: ";
-        cin >> product_1;
-        cout << product_1 << " bought successfully.";
+        cin >> name;
         
-        // Product Purchase Logic
-        money_current -= product_cost_small;
+        // Product Creation
+        product product_1(name, cost, revenue);
+        product_1.display(); // ***remove once product function verified gtg***
+        
+        // Product Results
+        money_increment += revenue; // Product revenue incremeter based on type of product bought
+        cout << name << " bought successfully.";
+        money_current -= cost;
         cout << "\n" << "Current Money: $" << money_current << "\n\n";
-        money_increment += product_revenue_1; // Product revenue incremeter based on type of product bought
         products.push_back(product_1); // Add product purchased to all products owned by user
+        
+    } else if (option_buy == "B") {
+       
+        
+    } else {
+        cout << "Invalid Option, Try Again" << "\n\n";
         
     }
 }
@@ -132,9 +182,10 @@ int main () {
         // Game End Checker (win)
         if (money_current >= money_game_win) {
             cout << "**************************" << "\n";
-            cout << "Congratulations!" << "\n" << "You have past $" << money_game_win << " and have won the game by reaching: $" << money_current << "!" << "\n";
+            cout << "Congratulations!" << "\n";
+            cout << "You have past $" << money_game_win << " and have won the game by reaching: $" << money_current << "!" << "\n";
             cout << "**************************" << "\n";
-            cout << "\n" << "Would you like to continue? (Y/N): ";
+            cout << "\n" << "Would you like to continue playing? (Y/N): ";
             
             // Continue Game Option (optional)
             string game_end_selector {};
