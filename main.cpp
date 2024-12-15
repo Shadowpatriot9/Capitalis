@@ -80,6 +80,23 @@ class product {
 
 // Building Object
 class building {
+    private:
+        string name;
+        string type;
+    
+    public:
+    //Constructor
+    building(string building_name, string building_type) {
+        name = building_name;
+        type = building_type;
+    }
+    
+    string get_name_b() const {
+        return name;
+    }
+    string get_type_b() const {
+        return type;
+    }
     
 };
 
@@ -87,6 +104,7 @@ class building {
 // Functions
 // ========================================
 
+// Per Turn Menu Function
 void overview() {
     cout << "------------------------" << "\n\n";
     cout << "Turn Number: " << turn_counter << "\n";
@@ -109,6 +127,7 @@ void overview() {
     cin >> option;
 }
 
+// Buy Menu Function
 void buy() {
     // Buy Overview Menu
     cout << "\n" << "------------------------" << "\n";
@@ -147,7 +166,25 @@ void buy() {
         products.push_back(product_1); // Add product purchased to all products owned by user
         
     } else if (option_buy == "B") {
-       
+        cout << "\n" << "------------------------" << "\n";
+
+        // Building Variables
+        string name;
+        string type;
+        
+        // Building Input
+        cout << "Type Options: " << "\n" << "- Sales" << "\n" << "- Marketing ***" "\n\n";
+        cout << "Type?: ";
+        cin >> type;
+        cout << "Name?: ";
+        cin >> name;
+        
+        // Building Creation
+        building building_sales(name, type);
+        
+        // Building Results
+        cout << "\n" << name << " bought." << "\n";
+        cout << type << " - type." << "\n\n";
         
     } else {
         cout << "Invalid Option, Try Again" << "\n\n";
@@ -155,6 +192,7 @@ void buy() {
     }
 }
 
+// Sell Menu Function
 void sell() {
     cout << "sell\n\n";
 }

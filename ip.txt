@@ -2,8 +2,10 @@ Bugs:
     - Display format for product buys (lines and spacing)
     - bought product to be included in overview menu list of products
     - think need to clean the code a bit overall after you create a building object and a basic sell function for something
+    - Create building array and fix output results similar to product buys
 
 In Progress (v1.0):
+    - Make building bought menu to per turn
     - Need better input handling for selectors to initiate game
     - Able to clear the output of the command line history?
     - Financing options like small loans w/strong interest and based on if you are eligibile to based on the indsutry and overall likelihood you would success, or borrow from family but dollar amount is small and still up to chance, or stuff like grants or angel investing based on a probability stat of a presentation (like a mini game like you are asked a question and have to select the right one as if an investor was trying to see if they trust you based on how you answer the question but there are like 5 different questions with varying topics like mgmt ability, selling ability, etc...)
