@@ -23,6 +23,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "product.h"
 
 // Expression Simplification
 using namespace std;
@@ -42,41 +43,6 @@ vector<string> products;
 // ========================================
 // Classes
 // ========================================
-
-// Product Object
-class product {
-    private:
-        string name;
-        int cost;
-        int revenue;
-
-    public:
-        // Constructor
-        product(string product_name, int product_cost, int product_revenue) {
-            name = product_name;
-            cost = product_cost;
-            revenue = product_revenue;
-        }
-
-        // Getter for Name
-        string get_name() const {
-            return name;
-        }
-        // Getter for Cost
-        int get_cost() const {
-            return cost;
-        }
-        
-        // Getter for Revenue
-        int get_revenue() const {
-            return revenue;
-        }
-    
-        // Display
-        void display() const {
-            cout << "Product: " << name << "\n" << "Cost: " << cost << "\n";
-        }
-};
 
 // Building Object
 class building {
