@@ -38,7 +38,7 @@ int money_increment {};
 const int money_game_win = 1000;
 int option {};
 int turn_counter {1};
-vector<string> products;
+vector<string> products_1;
 
 // ========================================
 // Classes
@@ -80,7 +80,7 @@ void overview() {
     
     // Print each product in the vector
     cout << "Products Owned: \n";
-    for (const auto& product : products) {
+    for (const auto& product : products_1) {
         cout << "- " << product << "\n";
     }
     cout << "\n";
@@ -113,7 +113,6 @@ void buy() {
         string name;
         int revenue = 5;
         int cost = 10;
-        vector<product> products;
        
         // Product Input
         cout << "Cost of New Product: $" << cost << "\n";
@@ -122,14 +121,13 @@ void buy() {
         
         // Product Creation
         product product_1(name, cost, revenue);
-        product_1.display(); // ***remove once product function verified gtg***
         
         // Product Results
         money_increment += revenue; // Product revenue incremeter based on type of product bought
-        cout << name << " bought successfully.";
+        cout << "'" << name << "'" << " bought successfully.";
         money_current -= cost;
         cout << "\n" << "Current Money: $" << money_current << "\n\n";
-        products.push_back(product_1); // Add product purchased to all products owned by user
+        products_1.push_back(product_1.get_name()); // Add product purchased to all products owned by user
         
     } else if (option_buy == "B") {
         cout << "\n" << "------------------------" << "\n";

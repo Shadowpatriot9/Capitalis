@@ -1,9 +1,7 @@
 Bugs:
-    - Display format for product buys (lines and spacing)
     - bought product to be included in overview menu list of products
     - think need to clean the code a bit overall after you create a building object and a basic sell function for something
     - Create building array and fix output results similar to product buys
-    - correct product array and to remove the display thing after its been bought action
 
 In Progress (v1.0):
     - Make building bought menu to per turn
