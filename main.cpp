@@ -20,10 +20,10 @@
 // Dependencies
 // ========================================
 
-#include <iostream>
 #include <string>
+#include <iostream>
 #include <vector>
-#include "product.h"
+#include "bin/product.h"
 
 // Expression Simplification
 using namespace std;
@@ -39,6 +39,7 @@ const int money_game_win = 1000;
 int option {};
 int turn_counter {1};
 vector<string> products_1;
+vector<string> buildings_1;
 
 // ========================================
 // Classes
@@ -47,18 +48,18 @@ vector<string> products_1;
 // Building Object
 class building {
     private:
-        string name;
+        string name_b;
         string type;
     
     public:
     //Constructor
     building(string building_name, string building_type) {
-        name = building_name;
+        name_b = building_name;
         type = building_type;
     }
     
     string get_name_b() const {
-        return name;
+        return name_b;
     }
     string get_type_b() const {
         return type;
@@ -78,6 +79,12 @@ void overview() {
     cout << "Revenue per turn: $" << money_increment << "\n";
     cout << "Expenses per turn: $" << "***" << "\n";
     
+    // Print Each Building
+    cout << "\n" << "Buildings Owned: " << "\n\n";
+    for (const auto& building : buildings_1) {
+        cout << "- " << building << "\n";
+    }
+    
     // Print each product in the vector
     cout << "Products Owned: \n";
     for (const auto& product : products_1) {
@@ -96,11 +103,11 @@ void overview() {
 // Buy Menu Function
 void buy() {
     // Buy Overview Menu
-    cout << "\n" << "------------------------" << "\n";
-    cout << "\n" << "What would you like to buy?" << "\n\n";
-    cout << "Enter 'P' for Product" << "\n";
-    cout << "Enter 'B' for Building" << "\n";
-    cout << "\n" << "Selection: ";
+    cout << "\n" << "------------------------" << "\n"
+        << "\n" << "What would you like to buy?" << "\n\n"
+        << "Enter 'P' for Product" << "\n"
+        << "Enter 'B' for Building" << "\n"
+        << "\n" << "Selection: ";
     
     // Buy Selection Variable Declaration
     string option_buy;
@@ -115,8 +122,8 @@ void buy() {
         int cost = 10;
        
         // Product Input
-        cout << "Cost of New Product: $" << cost << "\n";
-        cout << "\n" << "Enter Name of Product: ";
+        cout << "Cost of New Product: $" << cost << "\n"
+            << "\n" << "Enter Name of Product: ";
         cin >> name;
         
         // Product Creation
@@ -133,22 +140,23 @@ void buy() {
         cout << "\n" << "------------------------" << "\n";
 
         // Building Variables
-        string name;
+        string name_b;
         string type;
         
         // Building Input
-        cout << "Type Options: " << "\n" << "- Sales" << "\n" << "- Marketing ***" "\n\n";
-        cout << "Type?: ";
+        cout << "Type Options: " << "\n" << "- Sales" << "\n" << "- Marketing ***" "\n\n"
+            << "Type?: ";
         cin >> type;
         cout << "Name?: ";
-        cin >> name;
+        cin >> name_b;
         
         // Building Creation
-        building building_sales(name, type);
+        building building_sales(name_b, type);
         
         // Building Results
-        cout << "\n" << name << " bought." << "\n";
-        cout << type << " - type." << "\n\n";
+        cout << "\n" << name_b << " bought." << "\n"
+            << type << " - type." << "\n\n";
+        buildings_1.push_back(building_sales.get_name_b());
         
     } else {
         cout << "Invalid Option, Try Again" << "\n\n";
@@ -167,9 +175,9 @@ void sell() {
 
 int main () {
     // Intro Tagline
-    cout << "================================" << "\n";
-    cout << "===== Welcome to Capitalis =====" << "\n";
-    cout << "================================" << "\n\n";
+    cout << "================================" << "\n"
+        << "===== Welcome to Capitalis =====" << "\n"
+        << "================================" << "\n\n";
     
     while (true) {
         // Overview Menu
@@ -183,11 +191,12 @@ int main () {
         
         // Game End Checker (win)
         if (money_current >= money_game_win) {
-            cout << "**************************" << "\n";
-            cout << "Congratulations!" << "\n";
-            cout << "You have past $" << money_game_win << " and have won the game by reaching: $" << money_current << "!" << "\n";
-            cout << "**************************" << "\n";
-            cout << "\n" << "Would you like to continue playing? (Y/N): ";
+            cout << "**************************" << "\n"
+                << "Congratulations!" << "\n"
+                << "You have past $" << money_game_win << " and have won the game by reaching: $" 
+                << money_current << "!" << "\n"
+                << "**************************" << "\n"
+                << "\n" << "Would you like to continue playing? (Y/N): ";
             
             // Continue Game Option (optional)
             string game_end_selector {};
@@ -203,9 +212,9 @@ int main () {
         
         // Game End Checker (lose)
         if (money_current <= 0)  {
-            cout << "**************************" << "\n";
-            cout << "You have run out of money." << "\n" << "Game Over." << "\n";
-            cout << "**************************" << "\n\n";
+            cout << "**************************" << "\n"
+                << "You have run out of money." << "\n" << "Game Over." << "\n"
+                << "**************************" << "\n\n";
             break;
         }
         

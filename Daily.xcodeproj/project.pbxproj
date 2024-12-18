@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		563FB0562D067C9C00277B71 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 563FB0552D067C9C00277B71 /* main.cpp */; };
-		56C813282D0E9D1B0035D1CF /* product.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56C813272D0E9D190035D1CF /* product.cpp */; };
+		561FBB102D13989F00D88859 /* product.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 561FBB0E2D13989F00D88859 /* product.cpp */; };
+		563AF61F2D138C8600A6C597 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 563AF61E2D138C8600A6C597 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,12 +24,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		561FBB0D2D13989F00D88859 /* product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = product.h; sourceTree = "<group>"; };
+		561FBB0E2D13989F00D88859 /* product.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = product.cpp; sourceTree = "<group>"; };
 		5636CAA32D03AD7700D43A73 /* Daily */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Daily; sourceTree = BUILT_PRODUCTS_DIR; };
-		563FB0552D067C9C00277B71 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		56C813262D0E9D090035D1CF /* product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = product.h; sourceTree = "<group>"; };
-		56C813272D0E9D190035D1CF /* product.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = product.cpp; sourceTree = "<group>"; };
-		56C92BB42D09339B00693197 /* ip.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ip.txt; sourceTree = "<group>"; };
-		C5E6D4F72D043B0200D983E6 /* design.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = design.txt; sourceTree = "<group>"; };
+		563AF61E2D138C8600A6C597 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C554F1312D113643006C63CD /* design.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = design.txt; sourceTree = "<group>"; };
+		C554F1322D113643006C63CD /* ip.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ip.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,14 +43,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		561FBB0F2D13989F00D88859 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				561FBB0D2D13989F00D88859 /* product.h */,
+				561FBB0E2D13989F00D88859 /* product.cpp */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
 		5636CA9A2D03AD7700D43A73 = {
 			isa = PBXGroup;
 			children = (
-				C5E6D4F72D043B0200D983E6 /* design.txt */,
-				56C92BB42D09339B00693197 /* ip.txt */,
-				563FB0552D067C9C00277B71 /* main.cpp */,
-				56C813272D0E9D190035D1CF /* product.cpp */,
-				56C813262D0E9D090035D1CF /* product.h */,
+				563AF61E2D138C8600A6C597 /* main.cpp */,
+				561FBB0F2D13989F00D88859 /* bin */,
+				C554F1332D113643006C63CD /* design */,
 				5636CAA42D03AD7700D43A73 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +68,15 @@
 				5636CAA32D03AD7700D43A73 /* Daily */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C554F1332D113643006C63CD /* design */ = {
+			isa = PBXGroup;
+			children = (
+				C554F1312D113643006C63CD /* design.txt */,
+				C554F1322D113643006C63CD /* ip.txt */,
+			);
+			path = design;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +139,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				563FB0562D067C9C00277B71 /* main.cpp in Sources */,
-				56C813282D0E9D1B0035D1CF /* product.cpp in Sources */,
+				563AF61F2D138C8600A6C597 /* main.cpp in Sources */,
+				561FBB102D13989F00D88859 /* product.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
