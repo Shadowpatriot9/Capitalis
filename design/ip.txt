@@ -1,6 +1,8 @@
 Bugs:
     - bought product to be included in overview menu list of products
     - think need to clean the code a bit overall after you create a building object and a basic sell function for something
+    - fix building purchase menu
+    - fix building array to include type bought in overview menu and clean formmatting for buildings overview menu
 
 In Progress (v1.0):
     - Make building bought menu to per turn
