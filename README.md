@@ -1,7 +1,7 @@
 # Capitalis
 
 ## Introduction
-This is a turn-based business tycoon game via a CLI developed in C++. It's mainly a project for me to continue development as consistent as I can get it on a daily basis, but you know; it's a game so just have with it :)
+This is a turn-based business tycoon game via a CLI developed in C++. It's mainly a project for me to continue development as consistent as I can get it on a daily basis, but you know; it's a game at the end of the day, so just have at it :)
 
 ## Installation
 1. Clone repo
