@@ -16,7 +16,8 @@ In Progress (v1.0):
     - Baseline of building creation of certain stats (amount of employees, operating efficiency based on size (smaller buildings will have an increased operational efficiency while larger buildings wont but produce more output in general), ...)
     - Baseline of product creation of certain stats (amount of customers, max of dollar amount that product can increase your revenue by based on what the type is and the indsutry its in, ...)
     - Make bigger product options w/increase money increment per loop and cost loop dependent of product type
- 
+ 		- Make it where the cell function can sell the product line, but the longer the product line has been around the more worth you get out of it depending on the product type versus if it's a new product, there's limited things around it there for it's less money to sell it if it's quick, you know if you just bought it the term before kind of thing
+
 In Progress (v1.1):
     - Random event spawner (like recession lose x amount of money, union formation due to neglect lose x amount of staff or buildings until x amount of money repaid to settle strike, etc...)
     
