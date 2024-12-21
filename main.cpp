@@ -33,9 +33,14 @@ using namespace std;
 // ========================================
 
 // Global Variables
+struct global_money {
+    int increment {};
+    const int money_game_win = 1000;
+};
+
+global_money money{};
+
 int money_current = 100;
-int money_increment {};
-const int money_game_win = 1000;
 int option {};
 int turn_counter {1};
 vector<string> products_1;
@@ -76,7 +81,7 @@ void overview() {
     cout << "------------------------" << "\n\n";
     cout << "Turn Number: " << turn_counter << "\n";
     cout << "Current Money: $" << money_current << "\n";
-    cout << "Revenue per turn: $" << money_increment << "\n";
+    cout << "Revenue per turn: $" << money.increment << "\n";
     cout << "Expenses per turn: $" << "***" << "\n";
     
     // Print Each Building
@@ -130,7 +135,7 @@ void buy() {
         product product_1(name, cost, revenue);
         
         // Product Results
-        money_increment += revenue; // Product revenue incremeter based on type of product bought
+        money.increment += revenue; // Product revenue incremeter based on type of product bought
         cout << "'" << name << "'" << " bought successfully.";
         money_current -= cost;
         cout << "\n" << "Current Money: $" << money_current << "\n\n";
@@ -190,10 +195,10 @@ int main () {
         else cout << "not valid"; // No Option
         
         // Game End Checker (win)
-        if (money_current >= money_game_win) {
+        if (money_current >= money.money_game_win) {
             cout << "**************************" << "\n"
                 << "Congratulations!" << "\n"
-                << "You have past $" << money_game_win << " and have won the game by reaching: $" 
+                << "You have past $" << money.money_game_win << " and have won the game by reaching: $"
                 << money_current << "!" << "\n"
                 << "**************************" << "\n"
                 << "\n" << "Would you like to continue playing? (Y/N): ";
@@ -219,7 +224,7 @@ int main () {
         }
         
         // End of Turn Actions
-        money_current += money_increment;
+        money_current += money.increment;
         turn_counter ++;
         
     }
